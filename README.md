@@ -2,5 +2,5 @@
 
 Minecraft Education resource pack that exposes selected hidden Bedrock-style settings in the Education settings UI.
 
-Options marked with `§e` in game are added or unlocked by this pack. Some options may still be limited by Minecraft Education's internal backend behavior even when the UI is visible.
+Options marked with <span style="color:yellow;">some *blue* text</span> in game are added or unlocked by this pack. Some options may still be limited by Minecraft Education's internal backend behavior even when the UI is visible.
 
