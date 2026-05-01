@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "MCEdu Hidden Settings",
+    "description": "Adds hidden MCEdu settings. Options marked in §eyellow§r are added or unlocked by this pack.",
+    "uuid": "c12ce436-7299-4f9c-a392-84f5ba91da3b",
+    "version": [1, 0, 4],
+    "min_engine_version": [1, 21, 130]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "4b5d4061-3656-4e1f-af02-2bc38f173bcb",
+      "version": [1, 0, 4]
+    }
+  ]
+}
