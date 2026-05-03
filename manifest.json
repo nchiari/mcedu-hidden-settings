@@ -1,8 +1,8 @@
 {
   "format_version": 2,
   "header": {
-    "name": "MCEdu Hidden Settings",
-    "description": "Adds hidden MCEdu settings. Options marked in §eyellow§r are added or unlocked by this pack.",
+    "name": "MCEdu Hidden Settings 1.0.4",
+    "description": "Adds hidden MCEdu settings.",
     "uuid": "c12ce436-7299-4f9c-a392-84f5ba91da3b",
     "version": [1, 0, 4],
     "min_engine_version": [1, 21, 130]

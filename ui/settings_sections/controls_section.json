@@ -1065,7 +1065,7 @@
             },
             {
               "option_show_block_select_button@settings_common.option_toggle": {
-                "$option_label": "§ePin block",
+                "$option_label": "options.showBlockSelectButton",
                 "$option_binding_name": "#show_block_select_button",
                 "$toggle_name": "show_block_select_button",
                 "$has_option_description": true,
@@ -1106,7 +1106,7 @@
             },
             {
               "option_show_toggle_camera_perspective_button@settings_common.option_toggle": {
-                "$option_label": "§eCamera Perspective button",
+                "$option_label": "options.showToggleCameraPerspectiveButton",
                 "$option_binding_name": "#show_toggle_camera_perspective_button",
                 "$toggle_name": "show_toggle_camera_perspective_button"
               }

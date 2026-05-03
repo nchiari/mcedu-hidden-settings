@@ -323,29 +323,6 @@
         }
       },
 
-      {
-        "pause_label_header": {
-          "type": "label",
-          "text": "options.pauseHeader",
-          "color": "$sub_header_text_color"
-        }
-      },
-
-      {
-        "paddingPauseFeature": {
-          "type": "panel",
-          "size": "$spatialPatternsPadding"
-        }
-      },
-
-      {
-        "pause_toggle@settings_common.option_toggle": {
-          "$option_label": "§eEnable game pause",
-          "$option_binding_name": "#pause_option_toggle",
-          "$toggle_name": "pause_option_toggle"
-        }
-      },
-
       // Add some padding between the buttons/toggles to reduce the impression upon the eyes. (ADO:515619)
       {
         "paddingLinkEduSupport": {
@@ -389,7 +366,7 @@
 
       {
         "ecomode_enabled_toggle@settings_common.option_toggle": {
-          "$option_label": "§ePower saving",
+          "$option_label": "options.enableEcoMode",
           "$option_binding_name": "#ecomode_toggle",
           "$toggle_name": "ecomode_toggle"
         }
