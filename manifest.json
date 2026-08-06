@@ -1,17 +1,17 @@
 {
   "format_version": 2,
   "header": {
-    "name": "MCEdu Hidden Settings 1.0.4",
+    "name": "MCEdu Hidden Settings 1.26.30",
     "description": "Adds hidden MCEdu settings.",
     "uuid": "c12ce436-7299-4f9c-a392-84f5ba91da3b",
-    "version": [1, 0, 4],
-    "min_engine_version": [1, 21, 130]
+    "version": [1, 26, 30],
+    "min_engine_version": [1, 26, 30]
   },
   "modules": [
     {
       "type": "resources",
       "uuid": "4b5d4061-3656-4e1f-af02-2bc38f173bcb",
-      "version": [1, 0, 4]
+      "version": [1, 26, 30]
     }
   ]
 }
