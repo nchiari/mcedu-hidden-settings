@@ -276,10 +276,58 @@
       },
 
       {
+        "pause_label_header": {
+          "type": "label",
+          "text": "options.pauseHeader",
+          "color": "$sub_header_text_color",
+          "bindings": [
+            {
+              "binding_name": "#pause_toggle_enabled",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      {
+        "paddingPauseFeature": {
+          "type": "panel",
+          "size": "$spatialPatternsPadding",
+          "bindings": [
+            {
+              "binding_name": "#pause_toggle_enabled",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      {
+        "pause_toggle@settings_common.option_toggle": {
+          "$option_label": "options.pauseHint",
+          "$option_binding_name": "#pause_option_toggle",
+          "$toggle_name": "pause_option_toggle",
+          "bindings": [
+            {
+              "binding_name": "#pause_toggle_enabled",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+
+      {
         "pause_menu_on_focus_lost@settings_common.option_toggle": {
           "$option_label": "options.pauseMenuOnFocusLost",
           "$option_binding_name": "#pause_menu_on_focus_lost",
-          "$toggle_name": "pause_menu_on_focus_lost"
+          "$option_enabled_binding_name": "#pause_menu_on_focus_lost_enabled",
+          "$toggle_name": "pause_menu_on_focus_lost",
+          "bindings": [
+            {
+              "binding_name": "#pause_menu_on_focus_lost_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
         }
       },
 
@@ -328,6 +376,7 @@
         "ecomode_enabled_toggle@settings_common.option_toggle": {
           "$option_label": "options.enableEcoMode",
           "$option_binding_name": "#ecomode_toggle",
+          "$option_enabled_binding_name": "#ecomode_toggle_enabled",
           "$toggle_name": "ecomode_toggle"
         }
       },
@@ -1864,10 +1913,81 @@
     "$glyph_texture": "textures/ui/creator_glyph",
     "$glyph_color_texture": "textures/ui/creator_glyph_color",
     "$glyph_size": [ 17, 17 ],
-    "$button_text": "Creator",
+    "$button_text": "options.creator",
     "$toggle_property_bag": {
-      "#panel_title": "Creator"
+      "#panel_title": "options.creatorTitle"
     }
+  },
+
+  "editor_toggle_panel": {
+    "type": "stack_panel",
+    "size": [ "100%", "30%x" ],
+    "orientation": "horizontal",
+    "ignored": "$is_editor_ignored",
+    "controls": [
+      {
+        "editor_confirmation_panel": {
+          "type": "stack_panel",
+          "size": [ "68%", "100%c" ],
+          "controls": [
+            {
+              "editor_active_label": {
+                "type": "label",
+                "text": "#editor_activity_label",
+                "color": "$light_button_locked_text_color",
+                "size": [ "100%", "default" ],
+                "bindings": [
+                  {
+                    "binding_name": "#editor_activity_label"
+                  }
+                ]
+              }
+            },
+            {
+              "toggle_spacer": {
+                "type": "panel",
+                "size": [ "100%", "2%x" ]
+              }
+            },
+            {
+              "editor_confirmation_section_label": {
+                "type": "label",
+                "text": "#editor_label",
+                "color": "$light_button_locked_text_color",
+                "size": [ "100%", "default" ],
+                "bindings": [
+                  {
+                    "binding_name": "#editor_label"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "editor_toggle_spacer": {
+          "type": "panel",
+          "size": [ "2%", 10 ]
+        }
+      },
+      {
+        "editor_image_panel": {
+          "type": "stack_panel",
+          "size": [ "30%", "100%x" ],
+          "controls": [
+            {
+              "editor_icon": {
+                "type": "image",
+                "layer": 2,
+                "size": [ "100%", "100%" ],
+                "texture": "textures/ui/enable_editor"
+              }
+            }
+          ]
+        }
+      }
+    ]
   },
 
   "creator_toggles_panel": {
@@ -2741,6 +2861,9 @@
     ],
     "controls": [
       {
+        "editor_toggle@general_section.editor_toggle_panel": {}
+      },
+      {
         "creator_toggles@general_section.creator_toggles_panel": {}
       },
       {
@@ -2891,21 +3014,6 @@
                 "$dropdown_area": "content_area",
                 "$dropdown_name": "graphics_mode_dropdown",
                 "$option_enabled_binding_name": "#graphics_mode_dropdown_enabled",
-                "$options_dropdown_toggle_label_binding": "#graphics_mode_dropdown_toggle_label",
-                "$option_tooltip_binding_type": "global",
-                "$option_tooltip_area": "general_and_controls_sections",
-                "$option_tooltip_text_binding_name": "#graphics_mode_option_tooltip_text",
-                "$option_tooltip_visible_binding_name": "#graphics_mode_option_warning_visible",
-                "$dropdown_scroll_content_size": [ "100%", "240%" ]
-              }
-            },
-            {
-              "graphics_mode_world@settings_common.option_dropdown": {
-                "ignored": "$is_pregame",
-                "$option_label": "options.graphicsMode",
-                "$dropdown_content": "general_section.graphics_mode_dropdown_content",
-                "$dropdown_area": "content_area",
-                "$dropdown_name": "graphics_mode_dropdown",
                 "$options_dropdown_toggle_label_binding": "#graphics_mode_dropdown_toggle_label",
                 "$option_tooltip_binding_type": "global",
                 "$option_tooltip_area": "general_and_controls_sections",
@@ -3849,7 +3957,7 @@
       },
       {
         "max_framerate_slider@general_section.max_framerate_slider": {
-          "ignored": "$new_video_settings"
+          "ignored": "($new_video_settings or $education_edition)"
         }
       },
       {
@@ -3941,6 +4049,7 @@
     ]
   },
   "max_framerate_slider@settings_common.option_slider": {
+    "ignored": "$education_edition",
     "$option_label": "#max_framerate_slider_label",
     "$slider_name": "max_framerate",
     "$slider_value_binding_name": "#max_framerate",
@@ -3953,6 +4062,12 @@
     "$label_bindings": [
       {
         "binding_name": "$option_label"
+      }
+    ],
+    "bindings":[
+      {
+        "binding_name": "#max_framerate_slider_visible",
+        "binding_name_override": "#visible"
       }
     ],
     "controls": [
